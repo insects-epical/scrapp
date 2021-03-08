@@ -11,6 +11,7 @@ import logging
 
 from config import config_dict
 from app import create_app, db
+from app.base import models
 
 # WARNING: Don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
@@ -35,4 +36,6 @@ if DEBUG:
     app.logger.info('DBMS        = ' + app_config.SQLALCHEMY_DATABASE_URI )
 
 if __name__ == "__main__":
+    with app.app_context():
+        models.db.create_all()
     app.run()

@@ -62,9 +62,10 @@ body {
   font-size: 14px;
   color: #888;
   font-weight: 400;
-  background: #f4f7fa;
+  background: linear-gradient(-135deg, #84f542 0%, #e2e2e2 100%);
   position: relative;
 }
+
 
 *:focus {
   outline: none;
@@ -147,7 +148,7 @@ strong {
           animation: anim-rotate 1s linear infinite;
 }
 
-@-webkit-keyframes anim-rotate {
+/* @-webkit-keyframes anim-rotate {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
@@ -179,7 +180,7 @@ strong {
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
             transform: scale3d(0.3, 0.3, 0.3);
   }
-}
+} */
 p.text-muted {
   font-size: 13px;
 }

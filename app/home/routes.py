@@ -12,8 +12,7 @@ from jinja2 import TemplateNotFound
 @blueprint.route('/index')
 @login_required
 def index():
-
-    return render_template('index.html', segment='index')
+    return render_template('index.html', segment='index', current_user=current_user)
 
 @blueprint.route('/<template>')
 @login_required
@@ -28,7 +27,7 @@ def route_template(template):
         segment = get_segment( request )
 
         # Serve the file (if exists) from app/templates/FILE.html
-        return render_template( template, segment=segment )
+        return render_template( template, segment=segment,)
 
     except TemplateNotFound:
         return render_template('page-404.html'), 404
